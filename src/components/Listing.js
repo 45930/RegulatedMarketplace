@@ -151,6 +151,7 @@ class Lisitng extends Component {
     let ipfsUrl = "https://ipfs.infura.io/ipfs/" + this.state.description;
     let proposalUrl = "https://ipfs.infura.io/ipfs/" + this.state.proposal;
     let workerDiv;
+    let customerDiv;
     if (this.state.proposal == "") {
       workerDiv = (
         <div>
@@ -169,6 +170,18 @@ class Lisitng extends Component {
             Apply to work on this listing
           </button>
           {this.state.messsage}
+        </div>
+      );
+    } else {
+      customerDiv = (
+        <div>
+          <h3>For Customer</h3>
+          <button className="button" onClick={this.acceptProposal}>
+            Accept current proposal
+          </button>
+          <button className="button" onClick={this.rejectProposal}>
+            Reject current proposal
+          </button>
         </div>
       );
     }
@@ -200,15 +213,7 @@ class Lisitng extends Component {
             </div>
             <div>
               {workerDiv}
-              <div>
-                <h3>For Customer</h3>
-                <button className="button" onClick={this.acceptProposal}>
-                  Accept current proposal
-                </button>
-                <button className="button" onClick={this.rejectProposal}>
-                  Reject current proposal
-                </button>
-              </div>
+              {customerDiv}
             </div>
           </div>
         );
