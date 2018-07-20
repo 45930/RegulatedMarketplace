@@ -7,10 +7,12 @@ This project demonstrates how a third party can regulate a marketplace, that is 
 This project uses vagrant to manage the ethereum dependencies for the VM.  Make sure you have vagrant and virtualbox installed, then:
 
 1. Open 2 separate terminal windows, `vagrant ssh` into each.
+ - Don't forget to change the synced folder in the vagrantfile
 2. In the first window, change directories to `dapps` and `npm install`
 3. In the other window, change directories to `dapps`, then `truffle develop`
 4. In the same window, from the truffle develop prompt, type `migrate --reset`
 5. Back to the first window, type `npm run start` to start the develoment server
+6. In your host machine, run `ipfs daemon` (If you don't want to run a local daemon, you can change the code in `src/components/ipfs.js` but you might get issues with CORS)
 6. In your host machine, go to http://localhost:3000 and interact with the app!
 
 ## Contract Descriptions

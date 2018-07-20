@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "dapps" do |dapps|
     dapps.vm.box = "ubuntu/trusty64"
     dapps.vm.network "private_network", type: "dhcp"
-    # Change from "~/DAPPS" to an existing, and non-encrypted, folder on your host if the mount fails
+    # Change from "~/Projects/hackathon-ethereum-app" to an existing, and non-encrypted, folder on your host if the mount fails
     dapps.vm.synced_folder "~/Projects/hackathon-ethereum-app", "/home/vagrant/dapps", nfs: true, nfs_udp: false, create: true
 
     # React server
